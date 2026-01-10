@@ -51,12 +51,12 @@ kandidatis = kandidatet[kandidatet["kombinim"] == selected_kandidati]["id"].toli
 params = {
     "vitet_ids": viti_ids if viti_ids else None,
     "partia_ids": partia_ids if partia_ids else None,
-    "kandidatis": kandidatis if kandidatis else None
+    "kandidatis": kandidatis[0] if kandidatis else None
 }
 sql2 = "SELECT * FROM total_votave_per_kandidat(%(vitet_ids)s, %(partia_ids)s, %(kandidatis)s)"
 df_kand_anembane = query_df(sql2, params)
 
-params["komunas"] = komunas if komunas else None
+params["komunas"] = komunas[0] if komunas else None
 sql1 = "SELECT * FROM total_votave_per_kandidat_komune(%(vitet_ids)s, %(partia_ids)s, %(kandidatis)s, %(komunas)s)"
 
 st.subheader("Kandidatët me më së shumti vota anembanë Kosovës dhe diasporës")

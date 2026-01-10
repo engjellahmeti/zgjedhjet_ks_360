@@ -45,7 +45,7 @@ komunas = komunat[komunat["komuna"] == selected_komuna]["id"].tolist()
 params = {
     "vitet_ids": viti_ids if viti_ids else None,
     "partia_ids": partia_ids if partia_ids else None,
-    "komunas": komunas if komunas else None
+    "komunas": komunas[0] if komunas else None
 }
 
 if selected_komuna == 'All':
