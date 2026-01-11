@@ -82,7 +82,7 @@ else:
         alt.Chart(df)
         .mark_bar()
         .encode(
-            x=alt.X("viti:O", title="Viti zgjedhor"),
+            x=alt.X("viti:O", title="Viti zgjedhor", sort=None),
             xOffset=alt.XOffset("partia:N"),
             y=alt.Y("votat:Q", title="Numri i votave"),
             color=alt.Color("partia:N",
